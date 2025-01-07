@@ -22,6 +22,8 @@ def get_distances(locations: list[str], API_KEY: str) -> list[list[int]]:
             row = []
             for j, destination in enumerate(locations):
                 element = data["rows"][i]["elements"][j]
+                element["distance"]["text"].split()[0].replace(',', '.')
+                element["distance"]["text"].split()[0].replace(',', '.')
                 distance = float(element["distance"]["text"].split()[0]) * 1000 if element["distance"]["text"].split()[1] == 'km' else float(element["distance"]["text"].split()[0])
                 row.append(distance)
             distance_matrix.append(row)
